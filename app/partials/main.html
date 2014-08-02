@@ -1,10 +1,29 @@
 <fa-app fa-perspective="500" class="full-screen">
-  <fa-modifier fa-align="[0.5, 0.5]" fa-origin="[0.5, 0.5]">
+  <fa-modifier id="ionic_atom" fa-align="[0.5, 0.5]" fa-origin="[0.5, 0.5]">
     <fa-modifier>
-      <atom rotate-z="rotateZ" rotate-x="rotateX" rotate-y="rotateY" />
+      <atom rotate-z="atomRotateZ" rotate-x="atomRotateX" rotate-y="atomRotateY" />
     </fa-modifier>
     <fa-modifier fa-rotate-y="3.14159">
-      <atom rotate-z="rotateZ" rotate-x="rotateX" rotate-y="rotateY"/>
+      <atom rotate-z="atomRotateZ" rotate-x="atomRotateX" rotate-y="atomRotateY"/>
     </fa-modifier>
   </fa-modifier>
+  <fa-modifier fa-size="[1300, 300]" id="rapid_mobile_development" fa-origin="[0.5, 0.5]" fa-align="[0.5, 0.5]">
+    <fa-surface class="awesome">
+      Rapid Mobile Apps With
+    </fa-surface>
+  </fa-modifier>
+  <fa-modifier id="ionic_logo" fa-align="[0.5, 0.5]">
+    <ionic-title>
+    </ionic-title>
+  </fa-modifier>
+
+  <fa-animation timeline="timelineEval">
+    <animate targetModSelector="#rapid_mobile_development" field="translate" startValue="[-1300, -200, 0]"
+    endValue="[0, -200, 0]" curve="outBack" timelineLowerBound="0.0" timelineUpperBound="0.1" />
+
+    <animate targetModSelector="#ionic_atom" field="translate" startValue="[0, 0, 500]" endValue="[0, 0, 0]" curve="inQuad" timelineLowerBound="0.1" timelineUpperBound="0.2" />
+    <animate targetModSelector="#ionic_logo" field="translate" startValue="[1000, 250, 0]"
+    endValue="[0, 250, 0]" curve="outBack" timelineLowerBound="0.2" timelineUpperBound="0.3" />
+  </fa-animation>
+
 </fa-app>

@@ -15,3 +15,10 @@ body {
     left: 0;
     right: 0;
 }
+
+.awesome {
+  font-family: "HelveticaNeue-UltraLight", "Helvetica Neue UltraLight", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  text-align: center;
+  font-size: 8rem;
+  color: #5F87C5;
+}
