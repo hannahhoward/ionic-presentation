@@ -1,6 +1,7 @@
 body {
     margin: 0;
     font-family: sans-serif;
+    background-color: #4D84E0;
 }
 
 .center-box {
@@ -17,8 +18,8 @@ body {
 }
 
 .awesome {
-  font-family: "HelveticaNeue-UltraLight", "Helvetica Neue UltraLight", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   text-align: center;
-  font-size: 8rem;
-  color: #5F87C5;
+  font-size: 7rem;
+  color: white;
 }

@@ -44,7 +44,7 @@ angular.module('famousAngularStarter')
       };
     };
 
-    return function(points, timeline, backgroundAnimation) {
+    return function(points, timeline, backgroundAnimation, limitRotation) {
         //
         // Takes a list of points, with the curve to follow to the next point.
         // Any curve value on the last point is ignored.
@@ -67,7 +67,7 @@ angular.module('famousAngularStarter')
         //
 
         function value(point) {
-          if (point[1]) {
+          if (point[1] != null) {
             return point[1];
           } else {
             return backgroundAnimation();
