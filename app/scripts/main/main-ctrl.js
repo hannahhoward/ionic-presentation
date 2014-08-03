@@ -1,26 +1,31 @@
 'use strict';
 
 angular.module('famousAngularStarter')
-  .controller('MainCtrl', function ($scope, $famous) {
+  .controller('MainCtrl', function ($scope, $famous, $timeline, $keyframeAnimation) {
     var Transitionable = $famous['famous/transitions/Transitionable'];
-    var Timer = $famous['famous/utilities/Timer'];
+    var SnapTransition = $famous['famous/transitions/SnapTransition'];
+    var WallTransition = $famous['famous/transitions/WallTransition'];
+    var SpringTransition = $famous['famous/transitions/SpringTransition'];
+    var Easing = $famous['famous/transitions/Easing'];
+    Transitionable.registerMethod('snap', SnapTransition);
+    Transitionable.registerMethod('wall', WallTransition);
+    Transitionable.registerMethod('spring', SpringTransition);
 
-    $scope.spinner = {
-      speed: 50
-    };
-    $scope.rotateZ = new Transitionable(0);
-    $scope.rotateY = new Transitionable(0);
-    $scope.rotateX = new Transitionable(0);
+    $scope.timeline = $timeline('top', true, 0.0,
+      [
+      [0.1, 'auto', 900],
+      [0.2, 'manual', 900],
+      [0.3, 'auto', 900],
+      [0.4, 'manual', 1000],
+      [0.41, 'auto', 400],
+      [0.42, 'manual', 400],
+      [0.43, 'manual', 400],
+      [0.44, 'manual', 400],
+      [0.45, 'manual', 400],
+      [0.46, 'manual', 400],
+      [0.47, 'manual', 400],
+      [0.48, 'manual', 400]
+      ]
+      );
 
-    //run function on every tick of the Famo.us engine
-    Timer.every(function(){
-      var adjustedSpeed = parseFloat($scope.spinner.speed) / 1200;
-      $scope.rotateZ.set($scope.rotateZ.get() + adjustedSpeed * 3);
-      $scope.rotateY.set($scope.rotateY.get() + adjustedSpeed);
-      $scope.rotateX.set($scope.rotateX.get() - adjustedSpeed / 3);
-    }, 1);
-
-    $scope.gridOptions = {
-      dimensions: [1,2]
-    };
   });
