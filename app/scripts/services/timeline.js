@@ -77,8 +77,10 @@ angular.module('famousAngularStarter')
       timelines[name] = new Timeline(name, isDefault, startValue, points)
       if (isDefault) {
         timelines[name].initialize();
-      }
-      return timelines[name].transitionable;
+      };
+      return function() {
+        return timelines[name].transitionable.get();
+      };
     }
 
   });
