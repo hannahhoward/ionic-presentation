@@ -19,6 +19,19 @@ angular.module('famousAngularStarter')
           [0.48, 8.0],
         ],
         $scope.timeline);
+      this.rotate = $keyframeAnimation(
+        [
+          [0.48, 0.0, Easing.outBack],
+          [0.50, 1.0, Easing.outBack],
+          [0.51, 2.0, Easing.outBack],
+          [0.52, 3.0, Easing.outBack],
+          [0.53, 4.0, Easing.outBack],
+          [0.54, 5.0, Easing.outBack],
+          [0.55, 6.0, Easing.outBack],
+          [0.56, 7.0, Easing.outBack],
+          [0.57, 8.0],
+        ],
+        $scope.timeline);
       this.addSlide = function (slide) {
         $scope.slides[$scope.slidesCount] = slide;
         $scope.slidesCount++;
@@ -27,9 +40,7 @@ angular.module('famousAngularStarter')
     }
     return {
       restrict: 'E',
-      scope: {
-        timeline: "="
-      },
+      scope: true,
       transclude: true,
       controller: controller,
       templateUrl: 'partials/slides.html'

@@ -51,7 +51,8 @@ angular.module('famousAngularStarter')
           [0.45, (2.75 * 3.14159), Easing.inOutQuad],
           [0.46, (3.00 * 3.14159), Easing.inOutQuad],
           [0.47, (3.25 * 3.14159), Easing.inOutQuad],
-          [0.48, (3.50 * 3.14159)]
+          [0.48, (3.50 * 3.14159), Easing.outBack],
+          [0.50, (3.75 * 3.14159)]
         ],
         scope.timeline, atomRotateZBackground);
 
