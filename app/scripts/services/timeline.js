@@ -22,6 +22,10 @@ angular.module('famousAngularStarter')
 
     Timeline.prototype = {
       queue: function() {
+        this.queuePoint +=1;
+        if (this.queuePoint <= this.nextPoint) {
+          return;
+        }
         if (this.nextPoint >= this.points.length) {
           this.complete();
         } else if (this.points[this.nextPoint][1] == 'auto') {
@@ -34,6 +38,7 @@ angular.module('famousAngularStarter')
         currentTimeline = this;
         this.transitionable.set(this.startValue);
         this.nextPoint = 0;
+        this.queuePoint = 0;
         this.queue();
       },
       restart: function() {
@@ -47,6 +52,7 @@ angular.module('famousAngularStarter')
         } else {
           currentTimeline = null;
         }
+        this.completionCallback();
       },
       switchToChild: function() {
         var transition = this.points[this.nextPoint]
@@ -65,16 +71,17 @@ angular.module('famousAngularStarter')
       }
     };
 
-    function Timeline(name, isDefault, startValue, points) {
+    function Timeline(name, isDefault, startValue, points, completionCallback) {
       this.name = name;
       this.points = points;
       this.isDefault = isDefault;
       this.startValue = startValue;
+      this.completionCallback = completionCallback
       this.transitionable = new Transitionable(startValue);
     };
 
-    return function(name, isDefault, startValue, points) {
-      timelines[name] = new Timeline(name, isDefault, startValue, points)
+    return function(name, isDefault, startValue, points, completionCallback) {
+      timelines[name] = new Timeline(name, isDefault, startValue, points, completionCallback)
       if (isDefault) {
         timelines[name].initialize();
       };

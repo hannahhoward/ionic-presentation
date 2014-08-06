@@ -5,6 +5,14 @@ body {
     color: white;
 }
 
+#view_container {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+}
+
 .center-box {
     padding: 15px 50px 15px 50px;
     text-align: center;
@@ -20,14 +28,14 @@ body {
 
 .awesome {
   text-align: center;
-  font-size: 7rem;
+  font-size: 14rem;
 }
 
 #top_title {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 .slide-header {
-  font-size: 3.5rem;
+  font-size: 7rem;
   text-align: center;
 }
 

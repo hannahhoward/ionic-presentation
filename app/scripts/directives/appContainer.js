@@ -12,11 +12,14 @@ angular.module('famousAngularStarter')
       scope.resize = function(dimensions) {
         var width = dimensions[0];
         var height = dimensions[1];
-        var idealWidth = 1440;
-        var idealHeight = 900;
+        var idealWidth = 2880;
+        var idealHeight = 1800;
         var widthRatio = width / idealWidth;
         var heightRatio = height / idealHeight;
         var scale = (widthRatio < heightRatio ? widthRatio : heightRatio);
+        if (scale > 1.0) {
+          scale = 1.0;
+        }
 
         scope.globalScale = function() {
           return [scale, scale, 1];
@@ -33,10 +36,16 @@ angular.module('famousAngularStarter')
       scope.globalTranslate = $keyframeAnimation(
       [
         [0.3, [0,0,0], Easing.outBack],
-        [0.4, [0,0,250]]
+        [0.4, [0,0,500]]
       ],
       scope.timeline);
 
+      scope.globalOpacity = $keyframeAnimation(
+        [
+          [0.501, 1.0, Easing.inOutQuad],
+          [0.6, 0.0]
+        ],
+        scope.timeline);
     }
     return {
       restrict: 'E',

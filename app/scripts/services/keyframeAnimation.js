@@ -75,7 +75,7 @@ angular.module('famousAngularStarter')
         }
 
         return function() {
-          x = timeline();
+          var x = timeline();
           if (x < points[0][0]) {
             return value(points[0]);
           }

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('famousAngularStarter')
-  .controller('MainCtrl', function ($scope, $famous, $timeline, $keyframeAnimation) {
+  .controller('MainCtrl', function ($scope, $famous, $state, $timeline, $keyframeAnimation) {
     var Transitionable = $famous['famous/transitions/Transitionable'];
     var SnapTransition = $famous['famous/transitions/SnapTransition'];
     var WallTransition = $famous['famous/transitions/WallTransition'];
@@ -10,6 +10,10 @@ angular.module('famousAngularStarter')
     Transitionable.registerMethod('snap', SnapTransition);
     Transitionable.registerMethod('wall', WallTransition);
     Transitionable.registerMethod('spring', SpringTransition);
+
+    $scope.completion = function() {
+      $state.go('reveal');
+    };
 
     $scope.timeline = $timeline('top', true, 0.0,
       [
@@ -25,8 +29,11 @@ angular.module('famousAngularStarter')
       [0.46, 'manual', 600],
       [0.47, 'manual', 600],
       [0.48, 'manual', 600],
-      [0.50, 'manual', 600]
-      ]
+      [0.50, 'manual', 600],
+      [0.501, 'auto', 400],
+      [0.6, 'manual', 1000]
+      ],
+      $scope.completion
       );
 
   });

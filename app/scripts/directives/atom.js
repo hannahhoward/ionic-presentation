@@ -58,7 +58,7 @@ angular.module('famousAngularStarter')
 
       scope.atomTranslate = $keyframeAnimation(
         [
-          [0.1, [0, 0, 500], Easing.inQuad],
+          [0.1, [0, 0, 1000], Easing.inQuad],
           [0.2, [0, 0, 0]]
         ],
         scope.timeline);

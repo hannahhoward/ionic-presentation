@@ -14,7 +14,9 @@
     "bootstrap-sass-official": "3.1.1",
     "famous-angular": "~0.1.0",
     "jquery": "~2.1.1",
-    "underscore": "~1.6.0"
+    "underscore": "~1.6.0",
+    "reveal.js": "~2.6.2",
+    "ionic": "~0.9.27"
   },
   "devDependencies": {
     "angular-mocks": "1.2.x"

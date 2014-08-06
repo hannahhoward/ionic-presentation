@@ -13,6 +13,11 @@ angular.module('famousAngularStarter',
         controller: 'MainCtrl'
       });
 
+    $stateProvider
+      .state('reveal', {
+        url: "/reveal",
+        templateUrl: 'partials/reveal.html'
+      })
     $urlRouterProvider.otherwise("/");
   })
 ;
