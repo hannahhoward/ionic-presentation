@@ -1,0 +1,74 @@
+   <div class="reveal">
+
+      <div class="slides">
+        <section>
+          <h2>Hybrid Apps!</h2>
+          <ul>
+            <li>HTML5 that acts like native</li>
+            <li>Web wrapped in native layer</li>
+            <li>Direct access to native APIs</li>
+            <li>Cordova/Phonegap</li>
+            <li>Familiar web dev environment</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Hey wait! Didn't Facebook try that?</h2>
+          <p><span class="light-text">And it failed miserably?</span></p>
+        </section>
+
+        <section>
+          <h2>It's Not 2007 Anymore</h2>
+          <ul>
+            <li class="fragment">Mobile Web Browsers Are Vastly Improved</li>
+            <li class="fragment">Mobile Hardware is WAY Better</li>
+            <li class="fragment">You’re probably not building Facebook.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>So what do we need to make awesome hybrid apps?</h2>
+        </section>
+
+        <section>
+          <h2>UI components and interactions that feel native...</h2>
+          <p class="fragment"><span class="light-text">not like a mobile website.</span></p>
+          <p class="fragment"><span class="light-text">...like JQuery Mobile...</span></p>
+          <p class="fragment"><span class="light-text">...or Sencha Touch.</span></p>
+        </section>
+
+        <section>
+          <img src="img/ionic-logo.png" class="logo" width="296" height="331">
+          <blockquote>
+            &ldquo;Hello.&rdquo;
+          </blockquote>
+        </section>
+
+      </div>
+
+    </div>
+
+    <script src="scripts/head.min.js"></script>
+    <script src="bower_components/reveal.js/js/reveal.js"></script>
+
+    <script>
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: false,
+        progress: true,
+        history: false,
+        center: true,
+        maxScale: 2.0,
+        keyboard: false,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'scripts/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'scripts/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+    </script>

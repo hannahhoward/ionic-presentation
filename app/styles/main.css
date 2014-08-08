@@ -1,8 +1,16 @@
 body {
     margin: 0;
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     background-color: #4D84E0;
     color: white;
+}
+
+#view_container {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
 }
 
 .center-box {
@@ -20,35 +28,47 @@ body {
 
 .awesome {
   text-align: center;
-  font-size: 7rem;
+  font-size: 8.3333rem;
 }
 
+#top_title {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
 .slide-header {
-  font-size: 3.5rem;
-}
-
-.slide1 {
-  text-align: center;
-}
-.slide5 {
+  font-size: 4.6666rem;
   text-align: center;
 }
 
-.slide2 {
-  text-align: left;
+.behind {
+  z-index: -101;
 }
-.slide3 {
-  text-align: left;
+
+.cover {
+  background-color: #4D84E0;
+  z-index: -100;
 }
-.slide4 {
-  text-align: left;
+
+.cursive-header {
+  text-align: center;
 }
-.slide6 {
-  text-align: right;
+.cursive-header blockquote {
+  padding: 25px;
+  color: white;
+  display: block;
+  position: relative;
+  width: 70%;
+  margin: 5px auto;
+  padding: 25px;
+  font-family: "Georgia", Cambria, "Times New Roman", Times, serif;
+  font-weight: normal;
+  font-style: italic;
+  font-size: 7.33333rem;
+  background: none;
+  border: none;
+  box-shadow: none;
 }
-.slide7 {
-  text-align: right;
-}
-.slide8 {
-  text-align: right;
+
+.about-text {
+  font-size: 6.333rem;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
