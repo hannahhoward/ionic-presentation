@@ -36,6 +36,7 @@ angular.module('famousAngularStarter',
     revealState('ionic-basics');
     revealState('where-it-fits');
     revealState('concerns');
+    revealState('conclusion');
 
     $urlRouterProvider.otherwise("/");
   })
