@@ -1,0 +1,40 @@
+   <div class="reveal">
+
+      <div class="slides">
+
+        <section>
+          <p>Talk:</p>
+          <h4>http://hannahhoward.github.io/ionic-presentation</h4>
+          <p>Demo:</p>
+          <h4>https://github.com/hannahhoward/froyonic_demo</h4>
+        </section>
+
+      </div>
+
+    </div>
+
+    <script src="scripts/head.min.js"></script>
+    <script src="bower_components/reveal.js/js/reveal.js"></script>
+
+    <script>
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: false,
+        progress: true,
+        history: false,
+        center: true,
+        width: 1100,
+        maxScale: 2.0,
+        keyboard: false,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'scripts/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'scripts/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+    </script>

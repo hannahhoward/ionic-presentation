@@ -51,6 +51,8 @@ angular.module('famousAngularStarter')
       [0.5512, 'reveal', 'concerns'],
       [0.552, 'auto', 400],
       [0.56, 'auto', 600],
-      [0.561, 'auto', 400]
+      [0.561, 'auto', 400],
+      [0.5611,'manual', 500],
+      [0.5612, 'reveal', 'conclusion']
       ]);
   });
