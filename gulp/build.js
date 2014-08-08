@@ -5,7 +5,7 @@ var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 
 gulp.task('styles', function () {
-    return gulp.src('app/styles/main.scss')
+    return gulp.src('app/styles/main.css')
          .pipe($.rubySass({ style: 'expanded' }))
          .pipe(gulp.dest('.tmp/styles'))
          .pipe($.size());
@@ -20,11 +20,6 @@ gulp.task('scripts', function () {
 
 gulp.task('partials', function () {
   return gulp.src('app/partials/**/*.html')
-      .pipe($.minifyHtml({
-        empty: true,
-        spare: true,
-        quotes: true
-      }))
       .pipe($.ngHtml2js({
         moduleName: "famousAngularStarter",
         prefix: "partials/"
@@ -48,7 +43,7 @@ gulp.task('html', ['styles', 'scripts', 'partials'], function () {
         .pipe($.rev())
         .pipe(jsFilter)
         .pipe($.ngmin())
-        .pipe($.uglify())
+        .pipe($.uglify({mangle: false}))
         .pipe(jsFilter.restore())
         .pipe(cssFilter)
         .pipe($.csso())
@@ -61,13 +56,13 @@ gulp.task('html', ['styles', 'scripts', 'partials'], function () {
 });
 
 gulp.task('images', function () {
-    return gulp.src('app/images/**/*')
+    return gulp.src('app/img/**/*')
         .pipe($.cache($.imagemin({
             optimizationLevel: 3,
             progressive: true,
             interlaced: true
         })))
-        .pipe(gulp.dest('dist/images'))
+        .pipe(gulp.dest('dist/img'))
         .pipe($.size());
 });
 
