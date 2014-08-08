@@ -3,7 +3,7 @@ angular.module('famousAngularStarter')
   .factory('$globalTimeline', function ($timeline) {
     return $timeline('top', true, 0.0,
       [
-      [0.1, 'auto', 900],
+      [0.1, 'manual', 900],
       [0.2, 'manual', 900],
       [0.3, 'auto', 900],
       [0.4, 'manual', 1000],

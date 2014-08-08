@@ -7,7 +7,7 @@ angular.module('famousAngularStarter')
 
       scope.topTitleTranslate = $keyframeAnimation(
         [
-          [0.0, [-1733.333, -266.666, 0], Easing.outBack],
+          [0.0, [-2000, -266.666, 0], Easing.outBack],
           [0.1, [0, -266.666, 0], Easing.inOutQuad],
           [0.3, [0, -266.666, 0], Easing.outQuad],
           [0.4, [0, -533.333, 0]]

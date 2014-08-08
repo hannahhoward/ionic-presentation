@@ -6,7 +6,7 @@ angular.module('famousAngularStarter')
 
     return function(name) {
       if (!positionsSaved[name]) {
-        positionsSaved[name] = {h: 0, v: 0, f: 0};
+        positionsSaved[name] = {h: 0, v: 0, f: undefined};
       }
       return {
         savePosition: function() {
