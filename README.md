@@ -1,13 +1,11 @@
-fad3 ("Fade")
+Ionic Presentation
 ======================
 
-Famo.us/Angular + d3
+Famo.us/Angular + Reveal.js = A Very Dynamic Presentation About The Ionic Framework
 
-Proof of concept:  Break an arbitrary SVG element out into separate Famo.us Surfaces and then reconstruct their original positions.  Once the individual pieces are in their own Famo.us surfaces, they become animatable using Famo.us's Matrix3D-powered engine. 
+This presentation discusses the Ionic Framework, and is adapted from http://ionicframework.com/present-ionic/
 
-This was created at the Famo.us Hackathon at the HTML5 Developers' Conference in May 2014.  This code is hackathon-quality and not intended for any production purposes, though it does demonstrate some exciting possibilities for Famo.us + vector graphics.
-
-Applications:  integrate with SVG-based tools like d3, or work as the basis of a WYSIWYG vector graphics + Famo.us animations system (like the visual authoring style of Flash)
+Proof of concept: This is a demo of how you might make an awesome presentation using the Famo.us framework. Warning: This was hacked together in two weeks and the code is terrible.
 
 ### To run:
 
