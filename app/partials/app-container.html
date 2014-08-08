@@ -1,6 +1,14 @@
 <fa-app id="app_container" fa-perspective="666.666" class="full-screen">
   <fa-modifier fa-align="[0.5, 0.5]" fa-origin="[0.5, 0.5]" fa-scale="globalScale()">
     <fa-modifier fa-translate="globalTranslate()" id="global">
+      <fa-modifier fa-opacity="initialInstructionsOpacity()" fa-size="[1200, 800]" fa-origin="[0.5, 0.5]">
+        <fa-surface>
+          <div class="initial-instructions">
+            <p>Use arrow keys to navigate.</p>
+            <p>Press right arrow to get started.</p>
+          </div>
+        </fa-surface>
+      </fa-modifier>
       <div ng-transclude>
       </div>
     </fa-modifier>

@@ -5,6 +5,12 @@ body {
     color: white;
 }
 
+.initial-instructions {
+  text-align: center;
+  font-size: 6.3333rem;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
 #view_container {
   top: 0;
   bottom: 0;

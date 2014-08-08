@@ -79,6 +79,13 @@ angular.module('famousAngularStarter')
         [0.5012, [0,0,333.33]]
       ],
       scope.timeline);
+
+      scope.initialInstructionsOpacity = $keyframeAnimation(
+        [
+          [0.0, 1.0, Easing.inOutQuad],
+          [0.001, 0.0]
+        ],
+        scope.timeline);
     }
     return {
       restrict: 'E',
