@@ -59,7 +59,7 @@ angular.module('famousAngularStarter')
 
       var initialTranslate = $keyframeAnimation(
         [
-          [scope.slideNumber-1, [0, 400, -2], Easing.outElastic],
+          [scope.slideNumber-1, [0, 266.666, -2], Easing.outElastic],
           [scope.slideNumber, [0, 0, -2]]
         ],
         slidesCtrl.currentSlide);
@@ -68,7 +68,7 @@ angular.module('famousAngularStarter')
         [
           [0.1, null, Easing.inOutQuad],
           [0.2, [0, 0, -2], Easing.inOutQuad],
-          [0.3, [0, 400, -2], Easing.inOutQuad],
+          [0.3, [0, 266.666, -2], Easing.inOutQuad],
         ],
         scope.isActive, initialTranslate);
     }

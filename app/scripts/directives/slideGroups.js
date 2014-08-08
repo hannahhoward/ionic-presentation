@@ -2,6 +2,9 @@
 
 angular.module('famousAngularStarter')
   .directive('slideGroups', function ($famous, $timeline, $keyframeAnimation) {
+    function link(scope, element, attrs, appContainer) {
+      scope.groupOpacity = appContainer.globalOpacity;
+    };
     function controller($scope) {
       var Easing = $famous['famous/transitions/Easing'];
       $scope.slides = [];
@@ -23,7 +26,7 @@ angular.module('famousAngularStarter')
         [
           [0.48, 0.0, Easing.outBack],
           [0.50, 1.0, Easing.outBack],
-          [0.502, 1.0, Easing.inOutQuad]/*,
+          [0.502, 1.0, Easing.inOutQuad],
           [0.51, 2.0, Easing.outBack],
           [0.512, 2.0, Easing.inOutQuad],
           [0.52, 3.0, Easing.outBack],
@@ -36,17 +39,23 @@ angular.module('famousAngularStarter')
           [0.552, 6.0, Easing.inOutQuad],
           [0.56, 7.0, Easing.outBack],
           [0.562, 7.0, Easing.inOutQuad],
-          [0.57, 8.0]*/
+          [0.57, 8.0]
         ], $scope.timeline);
 
       var linear = function(t) { return t; };
+
+      this.getActiveSlideState = $keyframeAnimation(
+        [
+        [0.5011, 0.0, linear],
+        [0.5012, 1.0, linear]
+        ], $scope.timeline);
 
       this.getActiveState = $keyframeAnimation(
         [
           [0.48, 0.1, linear],
           [0.50, 0.2, linear],
-          [0.501, 0.3, linear]/*
-          [0.502, 0.2, linear]
+          [0.501, 0.3, linear],
+          [0.502, 0.2, linear],
           [0.51, 0.2, linear],
           [0.511, 0.3, linear],
           [0.512, 0.2, linear],
@@ -68,9 +77,8 @@ angular.module('famousAngularStarter')
           [0.57, 0.2, linear],
           [0.571, 0.3, linear],
           [0.572, 0.2, linear],
-          [0.58, 0.2, linear]*/
+          [0.58, 0.2, linear]
         ], $scope.timeline);
-
       this.addSlide = function (slide) {
         $scope.slides[$scope.slidesCount] = slide;
         $scope.slidesCount++;
@@ -78,9 +86,11 @@ angular.module('famousAngularStarter')
       };
     }
     return {
+      require: '^appContainer',
       restrict: 'E',
       scope: true,
       transclude: true,
+      link: link,
       controller: controller,
       templateUrl: 'partials/slide-groups.html'
     };

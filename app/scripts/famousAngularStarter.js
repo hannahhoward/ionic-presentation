@@ -13,11 +13,30 @@ angular.module('famousAngularStarter',
         controller: 'MainCtrl'
       });
 
-    $stateProvider
-      .state('reveal', {
-        url: "/reveal",
-        templateUrl: 'partials/reveal.html'
-      })
+    function revealState(name) {
+
+      $stateProvider
+        .state(name, {
+          url: "/"+name,
+          templateUrl: ('partials/'+name+'.html'),
+          controller: function ($scope, RevealPositionSaver) {
+            $scope.positionSaver = RevealPositionSaver(name);
+            $scope.$on('$viewContentLoaded', function(event){
+              $scope.positionSaver.restorePosition();
+            });
+          },
+          onExit: function(RevealPositionSaver) {
+            RevealPositionSaver(name).savePosition();
+          }
+        });
+    };
+
+    revealState('why-ionic');
+    revealState('cordova');
+    revealState('ionic-basics');
+    revealState('where-it-fits');
+    revealState('concerns');
+
     $urlRouterProvider.otherwise("/");
   })
 ;

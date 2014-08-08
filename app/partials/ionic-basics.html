@@ -1,179 +1,6 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <!-- Presentation created using reveal.js: https://github.com/hakimel/reveal.js -->
-    <!-- Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se -->
-
-    <title>Present Ionic Framework</title>
-
-    <meta name="description" content="Ionic Framework Presentation: The beautiful, open source framework for developing hybrid mobile apps with HTML5.">
-    <meta name="author" content="https://twitter.com/adamdbradley">
-    <meta name="author" content="https://twitter.com/benjsperry">
-
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-    <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.min.css">
-    <link rel="stylesheet" href="styles/ionic.css" id="theme">
-
-    <!-- For syntax highlighting -->
-    <link rel="stylesheet" href="styles/zenburn.css">
-
-    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
-    <script>
-      document.write( '<link rel="stylesheet" href="styles/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
-    </script>
-
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-44023830-1', 'ionicframework.com');
-      ga('send', 'pageview');
-
-    </script>
-  </head>
-
-  <body>
-
-    <div class="reveal">
+   <div class="reveal">
 
       <div class="slides">
-
-        <section>
-          <blockquote>
-            &ldquo;Hi, my name is...&rdquo;
-          </blockquote>
-          <ul>
-            <li>Hannah Howard</li>
-            <li>@techgirlwonder</li>
-          </ul>
-        </section>
-
-
-        <section>
-          <blockquote>
-            &ldquo;I work for...&rdquo;
-          </blockquote>
-          <ul>
-            <li>Logical Reality Design</li>
-            <li>@lrdesign</li>
-          </ul>
-          <p style="margin-top: 60px">
-            <img src="img/angular-icon.png" class="logo" width="210" height="210" style="margin-bottom: 0px">
-            <img src="img/Ruby_on_Rails-logo.png" class="logo" width="176" height="210" style="margin-bottom: 0px">
-          </p>
-        </section>
-
-        <section>
-          <h2>We work with early stage startups.</h2>
-        </section>
-
-        <section>
-          <h2>So, we have this conversation a lot...</h2>
-        </section>
-
-        <section>
-          <h3>I have an idea...</h3>
-          <blockquote class="fragment">
-            &ldquo;Awesome, tell us about it...&rdquo;
-          </blockquote>
-          <h3 class="fragment">I want a website...</h3>
-          <blockquote class="fragment">
-            &ldquo;Great! We build websites.&rdquo;
-          </blockquote>
-          <h3 class="fragment">and I want an app...</h3>
-          <blockquote class="fragment">
-            &ldquo;Great! We build apps.&rdquo;
-          </blockquote>
-          <h3 class="fragment">for both iOS and Android...</h3>
-          <blockquote class="fragment">
-            &ldquo;Ok...&rdquo;
-          </blockquote>
-        </section>
-
-        <section>
-          <h3>So basically I want this...</h3>
-          <p style="margin-top: 60px">
-            <img src="img/apple.png" class="logo" width="210" height="210" style="margin-right: 15px">
-            <img src="img/android.png" class="logo" width="210" height="210" style="margin-left: 15px; margin-right: 15px">
-            <img src="img/windows.png" class="logo" width="210" height="210" style="margin-left: 15px; margin-right: 15px">
-            <img src="img/firefoxos.png" class="logo" width="210" height="210" style="margin-left: 15px;">
-          </p>
-          <p><span class="light-text">
-            But I have a maximum budget of $50,000.
-          </span></p>
-        </section>
-
-        <section>
-          <h2>Insert picture of Evan looking really stressed here...</h2>
-        </section>
-
-        <section>
-          <h2>So what do you do?</h2>
-          <ul>
-            <li>Modern products are both web and native</li>
-            <li>Building seperate apps is expensive</li>
-            <li>Maintaining seperate code bases is hard</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>I'd rather build just one app that runs everywhere...</h2>
-        </section>
-
-        <section>
-          <h2>Good news. There's a way...</h2>
-        </section>
-
-        <section>
-          <h2>Hybrid Apps!</h2>
-          <ul>
-            <li>HTML5 that acts like native</li>
-            <li>Web wrapped in native layer</li>
-            <li>Direct access to native APIs</li>
-            <li>Cordova/Phonegap</li>
-            <li>Familiar web dev environment</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>Hey wait! Didn't Facebook try that?</h2>
-          <p><span class="light-text">And it failed miserably?</span></p>
-        </section>
-
-        <section>
-          <h2>It's Not 2007 Anymore</h2>
-          <ul>
-            <li class="fragment">Mobile Web Browsers Are Vastly Improved</li>
-            <li class="fragment">Mobile Hardware is WAY Better</li>
-            <li class="fragment">You’re probably not building Facebook.</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>So what do we need to make awesome hybrid apps?</h2>
-        </section>
-
-        <section>
-          <h2>UI components and interactions that feel native...</h2>
-          <p class="fragment"><span class="light-text">not like a mobile website.</span></p>
-          <p class="fragment"><span class="light-text">...like JQuery Mobile...</span></p>
-          <p class="fragment"><span class="light-text">...or Sencha Touch.</span></p>
-        </section>
-
-        <section>
-          <img src="img/ionic-logo.png" class="logo" width="296" height="331">
-          <blockquote>
-            &ldquo;Hello.&rdquo;
-          </blockquote>
-        </section>
-
         <section>
           <h2>Web Technologies You Already Know and Love</h2>
           <div style="margin-top: 70px">
@@ -185,7 +12,6 @@
             And...
           </span></p>
         </section>
-
 
         <section>
           <img src="img/angular-icon.png" class="logo" width="210" height="210" style="margin-bottom: 0px">
@@ -443,50 +269,23 @@ $ionicActionSheet.show({
 </code></pre>
           </div>
         </section>
-
-        <section>
-          <h2>So let's code!</h2>
-        </section>
-
-        <section>
-          <h2>So who should use Ionic?</h2>
-        </section>
-
-        <section>
-          <h2>Teams with strong web/angular experience.</h2>
-        </section>
-
-        <section>
-          <h2>Early stage startups trying to get multiplatform support early on</h2>
-        </section>
-
-        <section>
-          <h2>Anyone who wants an app fast that's also awesome.</h2>
-        </section>
-
-        <section>
-          <h2>Is it as fast as native?</h2>
-          <ul>
-            <li class="fragment">Nothing's as fast as native</li>
-            <li class="fragment">If you have 20 programmers and a 3 million dollar budget... go native!</li>
-            <li class="fragment">But if you don't, Ionic is there.</li>
-          </ul>
-        </section>
       </div>
 
     </div>
 
     <script src="scripts/head.min.js"></script>
-    <script src="bower_components/reveal.js/js/reveal.min.js"></script>
+    <script src="bower_components/reveal.js/js/reveal.js"></script>
 
     <script>
       // Full list of configuration options available here:
       // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
-        controls: true,
+        controls: false,
         progress: true,
-        history: true,
+        history: false,
         center: true,
+        maxScale: 2.0,
+        keyboard: false,
 
         theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
         transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
@@ -498,6 +297,3 @@ $ionicActionSheet.show({
         ]
       });
     </script>
-
-  </body>
-</html>

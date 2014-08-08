@@ -2,7 +2,7 @@
 
 angular.module('famousAngularStarter')
   .directive('atom', function ($famous, $timeline, $keyframeAnimation) {
-    function link(scope, element, attrs) {
+    function link(scope, element, attrs, appContainer) {
 
       var Timer = $famous['famous/utilities/Timer'];
       var Transitionable = $famous['famous/transitions/Transitionable'];
@@ -58,7 +58,7 @@ angular.module('famousAngularStarter')
 
       scope.atomTranslate = $keyframeAnimation(
         [
-          [0.1, [0, 0, 1000], Easing.inQuad],
+          [0.1, [0, 0, 666.66], Easing.inQuad],
           [0.2, [0, 0, 0]]
         ],
         scope.timeline);
@@ -66,9 +66,9 @@ angular.module('famousAngularStarter')
       scope.atomOpacity = $keyframeAnimation(
         [
           [0.1, 0, Easing.inOutQuad],
-          [0.1001, 1]
+          [0.1001, null]
         ],
-        scope.timeline);
+        scope.timeline, appContainer.globalOpacity);
 
       //run function on every tick of the Famo.us engine
       Timer.every(function(){
@@ -77,6 +77,7 @@ angular.module('famousAngularStarter')
       }, 1);
     }
     return {
+      require: "^appContainer",
       restrict: 'E',
       scope: true,
       link: link,
