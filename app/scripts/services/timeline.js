@@ -28,7 +28,7 @@ angular.module('famousAngularStarter')
     var SwipeDetector = {
       addVelocity: function(velocity) {
         this.updates += 1;
-        totalVelocity = ((this.updates - 1 ) * this.averageVelocity) + velocity;
+        var totalVelocity = ((this.updates - 1 ) * this.averageVelocity) + velocity;
         this.averageVelocity = (totalVelocity / this.updates);
       },
       start: function(data) {
