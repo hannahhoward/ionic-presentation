@@ -1,6 +1,11 @@
 
 angular.module('famousAngularStarter')
   .factory('$timeline', function ($famous, $state) {
+    var GenericSync     = $famous['famous/inputs/GenericSync'];
+    var MouseSync       = $famous['famous/inputs/MouseSync'];
+    var TouchSync       = $famous['famous/inputs/TouchSync'];
+    GenericSync.register({'mouse': MouseSync, 'touch': TouchSync});
+
     var timelines = {};
     var currentTimeline = null;
     var parentTimelines = [];
@@ -19,6 +24,63 @@ angular.module('famousAngularStarter')
         }
       }
     });
+
+    var SwipeDetector = {
+      addVelocity: function(velocity) {
+        this.updates += 1;
+        totalVelocity = ((this.updates - 1 ) * this.averageVelocity) + velocity;
+        this.averageVelocity = (totalVelocity / this.updates);
+      },
+      start: function(data) {
+        this.threshold = 100;
+        this.maxDeltaY = 100;
+        this.minimumVelocity = 1;
+        this.averageVelocity = 0;
+        this.updates = 0;
+        this.startPositionX = data.clientX;
+        this.startPositionY = data.clientY;
+        this.startTime = (new Date()).getTime();
+      },
+      update: function(data) {
+        this.addVelocity(data.velocity);
+      },
+      end: function(data) {
+        this.addVelocity(data.velocity);
+        var endPositionX = data.clientX;
+        var endPositionY = data.clientY;
+        var deltaX = endPositionX - this.startPositionX;
+        var deltaY = endPositionY - this.startPositionY;
+
+        var isSwipe = (Math.abs(deltaX) >= this.threshold &&
+          Math.abs(this.averageVelocity) >= this.minimumVelocity &&
+          Math.abs(deltaY) <= this.maxDeltaY);
+
+        if (isSwipe) {
+          if (deltaX < 0) {
+            if (currentTimeline) {
+              currentTimeline.advance();
+            }
+          } else {
+            if (currentTimeline) {
+              currentTimeline.goBack();
+            }
+          }
+        }
+      },
+      setup: function() {
+        var sync = new GenericSync(
+          ['mouse', 'touch'],
+          {direction: GenericSync.DIRECTION_X }
+        );
+
+        Engine.pipe(sync);
+        sync.on('start', this.start.bind(this));
+        sync.on('update', this.update.bind(this));
+        sync.on('end', this.end.bind(this));
+      }
+    }
+
+    SwipeDetector.setup();
 
     Timeline.prototype = {
       queue: function() {
